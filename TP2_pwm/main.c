@@ -29,16 +29,16 @@ int main (void)
 	MyGPIO_Init(&pwm);
 
 	tim.Timer=TIM2;
-	tim.ARR=3998 ;
-	tim.PSC= 1000;
+	tim.ARR= 71;
+	tim.PSC= 0;
 	MyTimer_Base_Init(&tim);
 	
 	
 	
-//MyTimer_PWM_Init(tim.Timer, 1);
-//MyTimer_PWM_ConfigureRatio(tim.Timer,1, 20);
+MyTimer_PWM_Init(tim.Timer, 1);
+MyTimer_PWM_ConfigureRatio(tim.Timer,1, 20);
 	
-	MyTimer_ActiveIT(tim.Timer, 3,callback); 
+	//MyTimer_ActiveIT(tim.Timer, 3,callback); 
 	MyTimer_Base_Start(tim.Timer);
 
 	while(1)
