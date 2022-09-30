@@ -1,5 +1,5 @@
 #include "../Include/MyTimer.h"
-#include "../Include/Driver_GPIO.h"
+
 
 void (* pointer1) (void);
 void (* pointer2) (void);
@@ -7,11 +7,7 @@ void (* pointer3) (void);
 void (* pointer4) (void);
 
 
-void callback( void)
-{
-	TIM2->SR &= ~TIM_SR_UIF; //scruter
-	MyGPIO_Toggle(GPIOC,10);
-}
+
 
 // Initialize TIMER
 void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * TimerStruct)
@@ -128,3 +124,9 @@ void MyTimer_PWM_ConfigureRatio(TIM_TypeDef * Timer, char Channel, int Ratio){
 	}
 }
 
+void TIM2_IRQHandler( void)
+{
+	TIM2->SR &= ~TIM_SR_UIF; //scruter
+	if (pointer2 !=0)
+		pointer2 ();
+}
