@@ -40,10 +40,9 @@ typedef struct
   TIM1_TRG_COM_IRQHandler
   TIM1_CC_IRQHandler
 	*/
-	void TIM2_IRQHandler(void);
-	void TIM3_IRQHandler(void);
-	void TIM4_IRQHandler(void);
-	
+
+	void callback ( void);
+
 	
 	//PWM
 void MyTimer_PWM_Init (TIM_TypeDef * Timer , char Channel ) ;
