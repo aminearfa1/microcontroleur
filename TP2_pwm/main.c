@@ -29,7 +29,7 @@ int main (void)
 	MyGPIO_Init(&pwm);
 
 	tim.Timer=TIM2;
-	tim.ARR= 71;
+	tim.ARR= (720-1);
 	tim.PSC= 0;
 	MyTimer_Base_Init(&tim);
 	

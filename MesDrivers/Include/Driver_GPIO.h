@@ -12,7 +12,7 @@ typedef struct
 //Page 160
 #define In_Floating 			0x4//0100
 #define In_PullDown 			0x8//1000
-#define In_PullUp 				0x8//1000
+#define In_PullUp 				0x28//11100
 #define In_Analog 				0x0//0000
 #define Out_PushPull 			0x1//00-01  Max. output speed (01: 10 MHz | 10:  2 MHz | 11: 50 MHz)
 #define Out_OpenDrain			0x5//01-01	Max. output speed (01: 10 MHz | 10:  2 MHz | 11: 50 MHz)
