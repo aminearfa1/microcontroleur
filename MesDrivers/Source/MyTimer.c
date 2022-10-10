@@ -124,6 +124,8 @@ void MyTimer_PWM_ConfigureRatio(TIM_TypeDef * Timer, char Channel, int Ratio){
 	}
 }
 
+
+
 void TIM2_IRQHandler( void)
 {
 	TIM2->SR &= ~TIM_SR_UIF; //scruter
